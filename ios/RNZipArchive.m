@@ -26,11 +26,11 @@ RCT_EXPORT_METHOD(unzip:(NSString *)from
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
 
-    [self zipArchiveProgressEvent:0 total:1 filePath:from]; // force 0%
+//    [self zipArchiveProgressEvent:0 total:1 filePath:from]; // force 0%
 
     BOOL success = [RNZASSZipArchive unzipFileAtPath:from toDestination:destinationPath delegate:self];
 
-    [self zipArchiveProgressEvent:1 total:1 filePath:from]; // force 100%
+//    [self zipArchiveProgressEvent:1 total:1 filePath:from]; // force 100%
 
     if (success) {
         resolve(destinationPath);
@@ -45,11 +45,11 @@ RCT_EXPORT_METHOD(zip:(NSString *)from
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
 
-    [self zipArchiveProgressEvent:0 total:1 filePath:destinationPath]; // force 0%
+//    [self zipArchiveProgressEvent:0 total:1 filePath:destinationPath]; // force 0%
 
     BOOL success = [RNZASSZipArchive createZipFileAtPath:destinationPath withContentsOfDirectory:from];
 
-    [self zipArchiveProgressEvent:1 total:1 filePath:destinationPath]; // force 100%
+//    [self zipArchiveProgressEvent:1 total:1 filePath:destinationPath]; // force 100%
 
     if (success) {
         resolve(destinationPath);
